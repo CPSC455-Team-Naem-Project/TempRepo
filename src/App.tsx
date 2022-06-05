@@ -1,58 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {Link, Outlet} from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
+    const auth = getAuth();
+    const showLogin = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
+
+    const logout = () => {
+        auth.signOut()
+            .then(console.log)
+    }
+
+    return (
+        <div className="App">
+            <h1>Notes App</h1>
+            <header className="App-header">
+                <button onClick={showLogin}>Login</button>
+                <button onClick={logout}>Logout</button>
+                <Link to='a'>A</Link>
+                <Link to='b'>B</Link>
+            </header>
+
+            <Outlet />
+        </div>
+    );
 }
 
 export default App;
