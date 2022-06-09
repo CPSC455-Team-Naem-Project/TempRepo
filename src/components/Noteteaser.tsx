@@ -4,15 +4,14 @@ import { faImage, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Button } from '@mui/material'
 
 
-interface Props {
+export interface Note {
+    title: string
     iconType: IconDefinition
-    title: String
-    categories : String[]
+    course: any
   }
 
-export default function Noteteaser({ iconType, title, categories } :Props){
+export default function Noteteaser({ iconType, course, title } :Note){
 
-    let cats = categories.map(categoryName =>  <Button variant="outlined" size = "small">{categoryName}</Button>    )
 
     return (
         <div style={{
@@ -24,7 +23,7 @@ export default function Noteteaser({ iconType, title, categories } :Props){
 
         <FontAwesomeIcon icon= {iconType as IconProp}  size="2x"/>
         <p>{title}</p>
-        {cats}
+        <Button className={course.className} variant="outlined" size = "small" sx={ { borderRadius: 8, color:"black" }}>{course.name}</Button> 
                 
          </div>
     )

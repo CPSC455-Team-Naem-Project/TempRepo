@@ -37,3 +37,34 @@
     transform: translateY(0px);
   }
 }
+
+.CPSC110 {
+  background-image: linear-gradient(red, yellow);
+}
+.CPSC210{
+  background-image: linear-gradient(#B3FFAB, #12FFF7);
+}
+
+.CPSC310{
+
+  background-image: linear-gradient(#000000, #e74c3c);
+
+}
+
+.ECON101{
+
+  background-image: linear-gradient(#F0C27B, #4B1248);
+
+}
+
+.ECON102{
+  background-image: linear-gradient(#FBD3E9, #BB377D);
+
+}
+
+.ECON355{
+  background-image: linear-gradient(#606c88, #3f4c6b);
+
+
+}
+

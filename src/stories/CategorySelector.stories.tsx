@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import CategorySelctor from '../components/CategorySelector';
+import {courses} from '../constants/courses'
 
 
 export default {
@@ -12,5 +13,11 @@ export default {
     component: CategorySelctor,
   } as ComponentMeta<typeof CategorySelctor>;
 
-  export const Primary: ComponentStory<typeof CategorySelctor> = () => <CategorySelctor categories={["CPSC 221", "ECON 100", "MATH 101"]}></CategorySelctor>;
+  let courseArr: any[] = []
+  for(let property in courses) {
+    let course = courses[property as keyof typeof courses]
+    courseArr.push(course)
+ }  
+
+  export const Primary: ComponentStory<typeof CategorySelctor> = () => <CategorySelctor courses={courseArr}></CategorySelctor>;
 

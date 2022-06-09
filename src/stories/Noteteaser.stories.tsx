@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Noteteaser from '../components/Noteteaser';
 import { faImage, faFilePdf } from '@fortawesome/free-solid-svg-icons'
+import {courses} from '../constants/courses'
 
 
 export default {
@@ -13,6 +14,6 @@ export default {
     component: Noteteaser,
   } as ComponentMeta<typeof Noteteaser>;
 
-  export const Image: ComponentStory<typeof Noteteaser> = () => <Noteteaser iconType={faImage} title="Syllabus" categories={["CPSC 221"]}></Noteteaser>;
+  export const Image: ComponentStory<typeof Noteteaser> = () => <Noteteaser iconType={faImage} title="Syllabus" course={courses.CPSC110}></Noteteaser>;
 
-  export const PDF: ComponentStory<typeof Noteteaser> = () => <Noteteaser iconType={faFilePdf} title="Syllabus" categories={["Econ 100"]}></Noteteaser>;
+  export const PDF: ComponentStory<typeof Noteteaser> = () => <Noteteaser iconType={faFilePdf} title="Syllabus" course={courses.CPSC210}></Noteteaser>;
