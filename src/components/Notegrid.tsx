@@ -10,7 +10,7 @@ interface Props {
 
 export default function Notegrid({ notes }: Props) {
   let allNotes = notes.map((note) => (
-    <Grid item xs={2}>
+    <Grid item xs={4}>
       <Noteteaser  title={note.title} iconType={note.iconType} course={note.course} />
     </Grid>
   ));
