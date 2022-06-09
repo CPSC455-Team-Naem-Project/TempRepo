@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition, IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faImage, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
-import { Autocomplete, Button, Grid, TextField } from '@mui/material';
+import { Autocomplete, TextField } from '@mui/material';
 
 interface Props {
   courses: any[];
@@ -29,6 +29,9 @@ export default function Navbar(props : any) {
           />
         </li>
         <li className="headerItemRight">
+          <a href="upload.html">Upload Notes </a>
+        </li>
+        <li>
           <a href="about.html">Profile </a>
         </li>
         <li>
